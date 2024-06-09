@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Jupyter lab
+Exec=/app/jupyter-lab
+Icon=~/.local/share/applications/Jupyter_logo.png
+Terminal=true
+Categories=Development;

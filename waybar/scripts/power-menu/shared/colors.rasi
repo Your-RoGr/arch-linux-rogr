@@ -1,0 +1,10 @@
+* {
+    background:     rgba(47, 48, 51, 0.8);
+    background-alt: rgba(101, 115, 235, 0.8);
+    background-alt-2: rgba(101, 115, 235);
+    foreground:     rgba(47, 48, 51);
+    selected:       rgba(217, 224, 238, 0.8);
+    active:         rgba(101, 115, 235, 0.8);
+    urgent:         rgba(101, 115, 235, 0.8);
+    border-col:     rgba(98, 98, 102);
+}

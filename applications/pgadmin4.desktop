@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=pgAdmin4
+Exec=pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY /app/pgadmin4
+Icon=~/.local/share/applications/Postgresql_elephant.png
+Terminal=true
+Categories=Development;

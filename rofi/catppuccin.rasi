@@ -1,0 +1,14 @@
+* {
+    button-col: rgba(47, 48, 51, 0);
+    bg-col: rgba(47, 48, 51, 0.8);
+    txt-col: rgba(47, 48, 51);
+    bg-col-light: rgba(47, 48, 51, 0.3);
+    border-col: rgba(98, 98, 102);
+    selected-col: rgba(47, 48, 51);
+    blue: rgba(101, 115, 235, 0.8);
+    fg-col: #D9E0EE;
+    fg-col2: #F55467;
+    grey: #FAFAFA;
+    width: 600;
+    border-radius: 12px;
+}
