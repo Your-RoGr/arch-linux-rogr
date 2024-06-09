@@ -43,6 +43,7 @@ cp swww/swww-random.sh ~/.config/swww/swww-random.sh
 cp Thunar/uca.xml ~/.config/Thunar/uca.xml
 cp alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 
+chmod +x ~/.config/swww/swww-random.sh
 sudo chmod 777 ~/.config/wallpapers
 
 yay -Sy --noconfirm breeze-snow-cursor-theme
