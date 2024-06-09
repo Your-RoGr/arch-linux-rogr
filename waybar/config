@@ -78,7 +78,7 @@
 
   "custom/rofi": {
     "tooltip": false,
-    "format": "☰",
+    "format": "🚀",
     "on-click": "bash -c 'rofi -show drun' &"
   },
 
@@ -307,7 +307,7 @@
 
    "custom/rofi": {
     "tooltip": false,
-    "format": "☰",
+    "format": "🚀",
     "on-click": "bash -c 'rofi -show drun' &"
    },
 
