@@ -45,8 +45,7 @@ elif [[ "${sd:0:2}" == "sd" ]]; then
     parted /dev/$sd mklabel gpt
     parted /dev/$sd mkpart primary fat32 1MiB 513MiB
     parted /dev/$sd set 1 boot on
-    parted /dev/$sd mkpart primary linux-swap 513MiB 20GiB
-    parted /dev/$sd mkpart primary ext4 20GiB 100%
+    parted /dev/$sd mkpart primary ext4 513MiB 100%
 
     # Formatting the partitions
     echo "Formatting the partitions"
@@ -117,7 +116,7 @@ sed -i 's/# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: AL
 
 # Installing software
 echo "Installing software"
-pacman -Sy --noconfirm grub efibootmgr micro dhcpcd os-prober ntfs-3g zram-generator git curl
+pacman -Sy --noconfirm grub efibootmgr micro dhcpcd os-prober ntfs-3g zram-generator git curl iwd
 
 # Enabling dhcpcd
 echo "Enabling dhcpcd"

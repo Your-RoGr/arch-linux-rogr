@@ -105,7 +105,8 @@ window#waybar {
 
 #c-w,
 #workspaces,
-#n {
+#n,
+#center {
     margin-right: 10px;
 }
 
@@ -122,7 +123,8 @@ window#waybar {
 #wireplumber,
 #custom-power-menu,
 #custom-rofi,
-#custom-change-idle {
+#custom-change-idle,
+#taskbar {
     margin-right: 10px;
 }
 

@@ -73,6 +73,7 @@ sudo pacman -Sy --noconfirm code
 
 echo "Installing Docker desktop"
 yay -Sy --noconfirm docker-desktop
+sudo pacman -Sy --noconfirm docker-compose
 
 # PostgreSQL
 
@@ -106,11 +107,6 @@ sudo pacman -Sy --noconfirm pycharm-community-edition
 
 echo "Installing PyCharm-Professional"
 yay -Sy --noconfirm pycharm-professional
-
-# GoLand is a cross-platform IDE built specially for Go developers
-
-echo "Installing GoLand"
-yay -Sy --noconfirm goland
 
 # Easily create 2D and 3D games
 
@@ -174,7 +170,10 @@ echo "Installing gnome-clocks"
 sudo pacman -Sy --noconfirm gnome-clocks
 
 echo "Installing Filelight"
-sudo pacman -S --noconfirm  filelight
+sudo pacman -S --noconfirm filelight
+
+# BitTorrent client
+sudo pacman -S --noconfirm qbittorrent
 
 # Clean cache
 sudo pacman -Scc --noconfirm

@@ -9,13 +9,14 @@ echo "You entered: $cuda_install"
 if [[ "${cuda_install:0:4}" == "skip" ]]; then
     echo "CUDA installing skipped"
 else
-    sudo pacman -Sy --noconfirm tensorflow-cuda
+    sudo pacman -Sy --noconfirm cudnn
 fi
 
 sudo mkdir /app
 sudo chmod -R 777 /app
 
-python -m venv ~/jupyterlab
+yay -S --noconfirm python310
+python3.10 -m venv ~/jupyterlab
 source ~/jupyterlab/bin/activate
 pip install -r requirements.txt
 cp ~/jupyterlab/bin/jupyter-lab /app/jupyter-lab
