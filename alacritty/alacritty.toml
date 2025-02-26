@@ -88,7 +88,7 @@ multiplier = 3  # Default: 3
 [font]
 
 # Normal font style
-normal = { family = "JetBrains Mono", style = "Regular" }  # Default for Linux/BSD: "monospace", Regular
+normal = { family = "Noto Sans Mono", style = "Regular" }
 
 # Bold font style
 bold = { style = "Bold" }  # Inherits family from normal, Default style: Bold
