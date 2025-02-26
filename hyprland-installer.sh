@@ -74,8 +74,7 @@ EOL
 mkdir -p ~/Screenshots
 
 mkdir -p ~/.config/fish
-touch ~/.config/fish/config.fish
-echo "set fish_greeting" > ~/.config/fish/config.fish
+cp ./fish/config.fish ~/.config/fish/config.fish
 
 chmod +x gui-apps-installer.sh
 chmod +x python-installer.sh
