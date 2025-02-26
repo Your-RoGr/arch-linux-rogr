@@ -1,5 +1,4 @@
-Here is the translation:
-
+![Version](https://img.shields.io/badge/Version-1.1.0-blue)
 # Arch Linux
 
 [English](README.en.md) | [Русский](README.md)
