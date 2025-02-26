@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# root required
-if [ "$EUID" -ne 0 ]; then echo "Please run $0 as root." && exit; fi
-
 cd "$(dirname $0)"
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
