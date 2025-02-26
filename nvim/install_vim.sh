@@ -22,8 +22,17 @@ go install github.com/fatih/gomodifytags@latest
 go install github.com/go-delve/delve/cmd/dlv@latest
 go install golang.org/x/tools/cmd/gonew@latest
 go install github.com/cweill/gotests/...@latest
-
-# yay -S impl json-to-struct gomvp mockgen govulncheck go-enum iferr callgraph fillswitch
+go install github.com/josharian/impl@latest
+go install github.com/golang/mock/mockgen@latest
+go install golang.org/x/vuln/cmd/govulncheck@latest
+go install github.com/abice/go-enum@latest
+go install github.com/davidrjenni/reftools/cmd/fillstruct@latest
+go install github.com/tmc/json-to-struct@latest
+go install github.com/abenz1267/gomvp@latest
+go install github.com/koron/iferr@latest
+go install golang.org/x/tools/cmd/callgraph@latest
+go install github.com/davidrjenni/reftools/cmd/fillswitch@latest
 
 cp ./init.vim ~/.config/nvim/
 cp -r ./lua ~/.config/nvim/
+

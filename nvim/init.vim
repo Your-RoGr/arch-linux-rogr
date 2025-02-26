@@ -181,7 +181,8 @@ function! s:Bclose(bang, buffer)
   endif
   let wcurrent = winnr() " Запоминаем номер текущего окна
   for w in wnums
-    execute w.'wincmd w' " Переключаемся на каждое окно, где отображается этот буфер
+    execute w.'wincmd w'
+    " Переключаемся на каждое окно, где отображается этот буфер
     let prevbuf = bufnr('#') " Получаем номер предыдущего буфера
     if prevbuf > 0 && buflisted(prevbuf) && prevbuf != btarget
       buffer # " Если предыдущий буфер существует и не является целевым, переключаемся на него
@@ -192,25 +193,36 @@ function! s:Bclose(bang, buffer)
       " Numbers of listed buffers which are not the target to be deleted.
       let blisted = filter(range(1, bufnr('$')), 'buflisted(v:val) && v:val != btarget') " Получаем список буферов, которые не являются целевыми
       " Listed, not target, and not displayed.
-      let bhidden = filter(eopy(blisted), 'bufwinnr(v:val) < 0') " Получаем скрытые буферы из списка
+      let bhidden = filter(copy(blisted), 'bufwinnr(v:val) < 0') " Получаем скрытые буферы из списка
       " Take the first buffer, if any (could be more intelligent).
-      let bjump = (bhidden + blisted + [-1])[0] " Выбираем первый подходящий буфер для переключения
+      " Выбираем первый подходящий буфер для переключения
+      let bjump = (bhidden + blisted + [-1])[0] 
       if bjump > 0
-        execute 'buffer '.bjump " Если такой буфер найден, переключаемся на него
+        " Если такой буфер найден, переключаемся на него
+        execute 'buffer '.bjump 
       else
-        execute 'enew'.a:bang " Если подходящих буферов нет, открываем новый пустой буфер
+        " Если подходящих буферов нет, открываем новый пустой буфер
+        execute 'enew'.a:bang 
       endif
     endif
   endfor
-  execute 'bdelete'.a:bang.' '.btarget " Удаляем целевой буфер
-  execute wcurrent.'wincmd w' " Возвращаемся в исходное окно
+  " Удаляем целевой буфер
+  execute 'bdelete'.a:bang.' '.btarget
+  "Возвращаемся в исходное окно
+  execute wcurrent.'wincmd w' 
 endfunction
-command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>) " Создаём команду Bclose для вызова функции
-nnoremap <silent> <Leader>bd :Bclose<CR> " Привязываем команду :Bclose к сочетанию клавиш <Leader>bd
 
-map gn :bn<cr> " Привязываем переключение на следующий буфер к клавише gn
-map gp :bp<cr> " Привязываем переключение на предыдущий буфер к клавише gp
-map gw :Bclose<cr> " Привязываем команду :Bclose к клавише gw
+command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>) " Создаём команду Bclose для вызова функции
+
+" Привязываем команду :Bclose к сочетанию клавиш <Leader>bd
+nnoremap <silent> <Leader>bd :Bclose<CR>
+
+" Привязываем переключение на следующий буфер к клавише gn
+map gn :bn<cr> 
+" Привязываем переключение на предыдущий буфер к клавише gp
+map gp :bp<cr>
+" Привязываем команду :Bclose к клавише gw
+map gw :Bclose<cr>
 
 " Run Python and C files by Ctrl+h
 " Для Python: при нажатии Ctrl+h сохраняем файл и запускаем его
@@ -244,7 +256,8 @@ autocmd FileType sh imap <buffer> <C-h> <esc>:w<CR>:exec '!bash' shellescape(@%,
 " Для Python устанавливаем цветовую колонку на 88-й символ
 autocmd FileType python set colorcolumn=88
 
-tnoremap <Esc> <C-\><C-n> " В терминале переназначаем клавишу Escape для выхода из режима терминала
+" В терминале переназначаем клавишу Escape для выхода из режима терминала
+tnoremap <Esc> <C-\><C-n>
 
 " Telescope bindings
 " Привязываем команду поиска файлов в Telescope к клавише Alt+f
@@ -256,3 +269,4 @@ nnoremap <A-g> <cmd>Telescope live_grep<cr>
 " Go to next or prev tab by H and L accordingly
 nnoremap H gT " Переключаемся на предыдущую вкладку с помощью клавиши H
 nnoremap L gt " Переключаемся на следующую вкладку с помощью клавиши L
+

@@ -21,3 +21,24 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
   group = format_sync_grp,
 })
+
+local languages = {
+  "go",
+  "gowork",
+  "gomod",
+  "gosum",
+  "sql",
+  "gotmpl",
+  "json",
+  "comment"
+}
+
+for _, lang in ipairs(languages) do
+  local ok, _ = pcall(function()
+    require("nvim-treesitter.install").ensure_installed(lang)
+  end)
+  if not ok then
+    print("Failed to install " .. lang .. " parser")
+  end
+end
+
