@@ -9,9 +9,9 @@ local async = require "plenary.async"
 -- Настройки для nvim-cmp
 local cmp = require 'cmp'
 cmp.setup({
-  completion = {
-    autocomplete = false
-  },
+  -- completion = {
+  --   autocomplete = false
+  -- },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
