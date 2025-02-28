@@ -137,3 +137,8 @@ require("auto-save").setup(
 
 -- Загружаем расширение fzf для Telescope
 require('telescope').load_extension('fzf')
+
+-- Табуляция выделенного текста
+vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
+vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
+
