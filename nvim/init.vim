@@ -25,7 +25,8 @@ set colorcolumn=88 " Установить вертикальную линию н
 
 set relativenumber " Относительная нуммерация строк
 
-inoremap jk <esc> " Преобразовать комбинацию клавиш 'jk' в 'esc' в режиме вставки
+" Преобразовать комбинацию клавиш 'jk' в 'esc' в режиме вставки
+inoremap jk <esc>
 
 call plug#begin('~/.vim/plugged') " Инициализация плагинов в каталоге ~/.vim/plugged
 
