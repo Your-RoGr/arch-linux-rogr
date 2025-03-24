@@ -69,7 +69,7 @@ cat > ~/.bash_profile << EOL
 #
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-Hyprland
+# Hyprland
 EOL
 
 mkdir -p ~/Screenshots
