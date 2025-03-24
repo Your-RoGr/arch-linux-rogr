@@ -10,18 +10,13 @@ mkdir -p ~/.config/Downloads
 
 # VLC media player, the open-source multimedia player
 
-echo "Installing VLC"
-sudo pacman -Sy --noconfirm vlc
+# echo "Installing VLC"
+# sudo pacman -Sy --noconfirm vlc
 
 # Live stream and record videos
 
 echo "Installing OBS Studio"
 sudo pacman -Sy --noconfirm obs-studio
-
-# Vector Graphics Editor
-
-echo "Installing Inkscape"
-sudo pacman -Sy --noconfirm inkscape
 
 # Free and open source 3D creation suite
 
@@ -45,7 +40,7 @@ sudo pacman -Sy --noconfirm imv
 # Docs
 # --------------------------------------------------------------------------
 
-# For pdf
+# For pdf edit
 
 echo "Installing LibreOffice"
 sudo pacman -Sy --noconfirm libreoffice-still-ru
@@ -54,11 +49,6 @@ sudo pacman -Sy --noconfirm libreoffice-still-ru
 
 echo "Installing ONLYOFFICE"
 yay -Sy --noconfirm onlyoffice-bin
-
-# for other docs (.txt, .py ...)
-
-echo "Installing cudatext-qt5-bin"
-yay -Sy --noconfirm cudatext-qt5-bin
 
 # --------------------------------------------------------------------------
 # Developer Tools
@@ -71,9 +61,9 @@ sudo pacman -Sy --noconfirm code
 
 # Docker with GUI
 
-echo "Installing Docker desktop"
-yay -Sy --noconfirm docker-desktop
-sudo pacman -Sy --noconfirm docker-compose
+# echo "Installing Docker desktop"
+# yay -Sy --noconfirm docker-desktop
+# sudo pacman -Sy --noconfirm docker-compose
 
 # PostgreSQL
 
@@ -85,38 +75,33 @@ sudo systemctl enable postgresql
 
 # PostgreSQL client
 
-echo "Installing PostBird"
-yay -Sy --noconfirm postbird-bin
-
-# Platform for building and using APIs
-
-echo "Installing Postman"
-yay -Sy --noconfirm postman-bin
+# echo "Installing PostBird"
+# yay -Sy --noconfirm postbird-bin
 
 # DB Browser for SQLite is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
 
-echo "Installing DB Browser for SQLite"
-sudo pacman -Sy --noconfirm sqlitebrowser
+# echo "Installing DB Browser for SQLite"
+# sudo pacman -Sy --noconfirm sqlitebrowser
 
 # Community Python IDE
 
-echo "Installing Pycharm Community Edition"
-sudo pacman -Sy --noconfirm pycharm-community-edition
+# echo "Installing Pycharm Community Edition"
+# sudo pacman -Sy --noconfirm pycharm-community-edition
 
 # The most intelligent Python IDE
 
-echo "Installing PyCharm-Professional"
-yay -Sy --noconfirm pycharm-professional
+# echo "Installing PyCharm-Professional"
+# yay -Sy --noconfirm pycharm-professional
 
 # Easily create 2D and 3D games
 
-echo "Installing Godot Engine"
-sudo pacman -Sy --noconfirm godot
+# echo "Installing Godot Engine"
+# sudo pacman -Sy --noconfirm godot
 
 # Godot (C#/.NET)
 
-echo "Installing Godot (C#/.NET)"
-yay -Sy --noconfirm godot-mono-bin
+# echo "Installing Godot (C#/.NET)"
+# yay -Sy --noconfirm godot-mono-bin
 
 # --------------------------------------------------------------------------
 # Networking
