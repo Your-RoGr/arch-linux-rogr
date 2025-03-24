@@ -33,6 +33,3 @@ go install github.com/davidrjenni/reftools/cmd/fillswitch@latest
 mkdir -p ~/.config/nvim/
 cp ./init.vim ~/.config/nvim/
 cp -r ./lua ~/.config/nvim/
-
-nvim -c 'PlugInstall' -c 'qa!'
-
