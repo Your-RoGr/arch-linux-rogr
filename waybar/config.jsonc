@@ -1,0 +1,438 @@
+[
+  {
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "output": "eDP-1",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 50,
+    "width": 1900,
+    "modules-left": [
+      "group/c-w",
+      "hyprland/workspaces",
+      "custom/rofi",
+      "wlr/taskbar",
+      "cava"
+    ],
+    "modules-center": [
+      "group/center"
+    ],
+    "modules-right": [
+      "tray",
+      "group/n",
+      "group/v"
+    ],
+    "group/c-w": {
+      "orientation": "inherit",
+      "modules": [
+        "clock",
+        "custom/weather"
+      ]
+    },
+    "clock": {
+      "format": "{:%H:%M}",
+      "format-alt": "{:%A, %B %d, %Y (%R)}",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "calendar": {
+        "mode": "year",
+        "mode-mon-col": 3,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "on-click-right": "mode",
+        "format": {
+          "months": "<span color='#ffead3'><b>{}</b></span>",
+          "days": "<span color='#ecc6d9'><b>{}</b></span>",
+          "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+          "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+          "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+        }
+      },
+      "actions": {
+        "on-click": "mode",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+      },
+      "on-click-middle": "gnome-clocks"
+    },
+    "custom/weather": {
+      "tooltip": true,
+      "format": "{}",
+      "interval": 3600,
+      "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+      "return-type": "json"
+    },
+    "hyprland/workspaces": {
+      "on-scroll-up": "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "persistent-workspaces": {
+        "*": 1
+      }
+    },
+    "custom/rofi": {
+      "tooltip": false,
+      "format": "🚀",
+      "on-click": "bash -c 'rofi -show drun' &"
+    },
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 24,
+      "icon-theme": "Numix-Circle",
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-middle": "close",
+      "ignore-list": [
+        "Alacritty"
+      ]
+    },
+    "cava": {
+        "cava_config": "$HOME/.config/cava/config",
+        "framerate": 30,
+        "autosens": 1,
+        "sensitivity": 1,
+        "bars": 50,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": true,
+        "noise_reduction": 0.77,
+        "input_delay": 1,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+          "on-click-right": "mode"
+        }
+    },
+    "group/center": {
+      "orientation": "inherit",
+      "modules": [
+        "temperature",
+        "cpu",
+        "custom/memory",
+        "memory",
+        "battery"
+      ]
+    },
+    "temperature": {
+      "tooltip": false,
+      "format": "🌡️{temperatureC}°C",
+      "interval": 30,
+      "on-click-middle": "cpupower-gui"
+    },
+    "cpu": {
+      "interval": 1,
+      "format": "CPU {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}",
+      "format-icons": [
+         "<span color='#69ff94'>▁</span>",
+         "<span color='#2aa9ff'>▂</span>",
+         "<span color='#f8f8f2'>▃</span>",
+         "<span color='#f8f8f2'>▄</span>",
+         "<span color='#ffffa5'>▅</span>",
+         "<span color='#ffffa5'>▆</span>",
+         "<span color='#ff9977'>▇</span>",
+         "<span color='#dd532e'>█</span>"  
+      ],
+      // "interval": 10,
+      // "format": "🔲{usage}%",
+      "on-click-middle": "cpupower-gui"
+    },
+    "memory": {
+      "interval": 10,
+      "format": "🧠{}%",
+      "on-click-middle": "cpupower-gui"
+    },
+    "battery": {
+      "states": {
+        "good": 95,
+        "warning": 40,
+        "critical": 30
+      },
+      "format": "🔋{capacity}%",
+      "format-charging": "⚡{capacity}%",
+      "format-plugged": "🔌{capacity}%",
+      "format-alt": "{time}",
+      "on-click-middle": "cpupower-gui"
+    },
+    "tray": {
+      "icon-size": 24,
+      "spacing": 5,
+      "show-passive-items": true
+    },
+    "group/n": {
+      "orientation": "inherit",
+      "modules": [
+        "network",
+        "hyprland/language",
+        "bluetooth"
+      ]
+    },
+    "network": {
+      "format-wifi": "🛜{signalStrength}%",
+      "format-ethernet": "🌐↑{bandwidthUpBytes}↓{bandwidthDownBytes}",
+      "tooltip-format": "{ipaddr}/{cidr}",
+      "format-linked": "🌐{ifname} (No IP)",
+      "format-disconnected": "Disconnected ⚠",
+      "on-click-middle": "iwgtk"
+    },
+    "hyprland/language": {
+      "format-en": "US🇺🇸",
+      "format-ru": "RU🇷🇺",
+      "format-ja": "JP🇯🇵",
+      "keyboard-name": "at-translated-set-2-keyboard",
+      "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+    },
+    "bluetooth": {
+      "format": "📡{status}",
+      "format-alt": "📡{}",
+      "format-disabled": "📡{status}",
+      "format-connected": "📡{num_connections}",
+      "tooltip-format": "{device_alias}",
+      "tooltip-format-connected": "📡{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}",
+      "on-click-middle": "blueberry",
+      "on-click": "bash -c \"if [ \"$(bluetoothctl show | grep 'Powered' | cut -d ' ' -f2)\" == 'yes' ]; then bluetoothctl power off; else bluetoothctl power on; fi\""
+    },
+    "group/v": {
+      "orientation": "inherit",
+      "modules": [
+        "custom/change-idle",
+        "backlight",
+        "wireplumber",
+        "custom/power-menu"
+      ]
+    },
+    "custom/change-idle": {
+      "tooltip": true,
+      "format": "🖥️{}",
+      "exec": "sleep 1 && bash ~/.config/waybar/scripts/set_idle.sh",
+      "interval": 300,
+      "on-click": "bash ~/.config/waybar/scripts/change_idle.sh",
+      "return-type": "json"
+    },
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon}{percent}%",
+      "format-icons": [
+        "🌙",
+        "🌤️",
+        "☀️"
+      ],
+      "on-scroll-up": "brightnessctl -q set 1%+",
+      "on-scroll-down": "brightnessctl -q set 1%-"
+    },
+    "wireplumber": {
+      "format": "🔈{volume}%",
+      "format-muted": "🔇",
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-middle": "pavucontrol",
+      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+      "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
+    },
+    "custom/power-menu": {
+      "tooltip": false,
+      "format": "⏻",
+      "on-click": "bash ~/.config/waybar/scripts/power-menu/powermenu.sh &"
+    }
+  },
+  {
+    "layer": "top",
+    "position": "top",
+    "output": "!eDP-1",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 50,
+    "width": 1900,
+    "modules-left": [
+      "group/c-w",
+      "hyprland/workspaces",
+      "custom/rofi",
+      "wlr/taskbar"
+    ],
+    "modules-center": [
+      "group/center"
+    ],
+    "modules-right": [
+      "tray",
+      "group/n",
+      "group/v"
+    ],
+    "group/c-w": {
+      "orientation": "inherit",
+      "modules": [
+        "clock",
+        "custom/weather"
+      ]
+    },
+    "clock": {
+      "format": "{:%H:%M}",
+      "format-alt": "{:%A, %B %d, %Y (%R)}",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "calendar": {
+        "mode": "year",
+        "mode-mon-col": 3,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "on-click-right": "mode",
+        "format": {
+          "months": "<span color='#ffead3'><b>{}</b></span>",
+          "days": "<span color='#ecc6d9'><b>{}</b></span>",
+          "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+          "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+          "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+        }
+      },
+      "actions": {
+        "on-click": "mode",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+      },
+      "on-click-middle": "gnome-clocks"
+    },
+    "custom/weather": {
+      "tooltip": true,
+      "format": "{}",
+      "interval": 3600,
+      "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+      "return-type": "json"
+    },
+    "hyprland/workspaces": {
+      "on-scroll-up": "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "persistent-workspaces": {
+        "*": 1
+      }
+    },
+    "custom/rofi": {
+      "tooltip": false,
+      "format": "🚀",
+      "on-click": "bash -c 'rofi -show drun' &"
+    },
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 24,
+      "icon-theme": "Numix-Circle",
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-middle": "close",
+      "ignore-list": [
+        "Alacritty"
+      ]
+    },
+    "group/center": {
+      "orientation": "inherit",
+      "modules": [
+        "temperature",
+        "cpu",
+        "custom/memory",
+        "memory",
+        "battery"
+      ]
+    },
+    "temperature": {
+      "tooltip": false,
+      "format": "🌡️{temperatureC}°C",
+      "interval": 30,
+      "on-click-middle": "cpupower-gui"
+    },
+    "cpu": {
+      "interval": 10,
+      "format": "🔲{usage}%",
+      "on-click-middle": "cpupower-gui"
+    },
+    "memory": {
+      "interval": 10,
+      "format": "🧠{}%",
+      "on-click-middle": "cpupower-gui"
+    },
+    "battery": {
+      "states": {
+        "good": 95,
+        "warning": 40,
+        "critical": 30
+      },
+      "format": "🔋{capacity}%",
+      "format-charging": "⚡{capacity}%",
+      "format-plugged": "🔌{capacity}%",
+      "format-alt": "{time}",
+      "on-click-middle": "cpupower-gui"
+    },
+    "tray": {
+      "icon-size": 24,
+      "spacing": 5,
+      "show-passive-items": true
+    },
+    "group/n": {
+      "orientation": "inherit",
+      "modules": [
+        "network",
+        "hyprland/language",
+        "bluetooth"
+      ]
+    },
+    "network": {
+      "format-wifi": "🛜{signalStrength}%",
+      "format-ethernet": "🌐↑{bandwidthUpBytes}↓{bandwidthDownBytes}",
+      "tooltip-format": "{ipaddr}/{cidr}",
+      "format-linked": "🌐{ifname} (No IP)",
+      "format-disconnected": "Disconnected ⚠",
+      "on-click-middle": "iwgtk"
+    },
+    "hyprland/language": {
+      "format-en": "US🇺🇸",
+      "format-ru": "RU🇷🇺",
+      "format-ja": "JP🇯🇵",
+      "keyboard-name": "at-translated-set-2-keyboard",
+      "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+    },
+    "bluetooth": {
+      "format": "📡{status}",
+      "format-alt": "📡{}",
+      "format-disabled": "📡{status}",
+      "format-connected": "📡{num_connections}",
+      "tooltip-format": "{device_alias}",
+      "tooltip-format-connected": "📡{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}",
+      "on-click-middle": "blueberry",
+      "on-click": "bash -c \"if [ \"$(bluetoothctl show | grep 'Powered' | cut -d ' ' -f2)\" == 'yes' ]; then bluetoothctl power off; else bluetoothctl power on; fi\""
+    },
+    "group/v": {
+      "orientation": "inherit",
+      "modules": [
+        "backlight",
+        "wireplumber",
+        "custom/power-menu"
+      ]
+    },
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon}{percent}%",
+      "format-icons": [
+        "🌙",
+        "🌤️",
+        "☀️"
+      ],
+      "on-scroll-up": "brightnessctl -q set 1%+",
+      "on-scroll-down": "brightnessctl -q set 1%-"
+    },
+    "wireplumber": {
+      "format": "🔈{volume}%",
+      "format-muted": "🔇",
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-middle": "pavucontrol",
+      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+      "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
+    },
+    "custom/power-menu": {
+      "tooltip": false,
+      "format": "⏻",
+      "on-click": "bash ~/.config/waybar/scripts/power-menu/powermenu.sh &"
+    }
+  }
+]

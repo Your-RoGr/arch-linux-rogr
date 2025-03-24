@@ -15,8 +15,8 @@ sudo cp -r wallpapers ~/.config
 chmod -R +x ~/.config/waybar/scripts/
 
 sudo pacman -Sy --noconfirm kde-cli-tools
-yay -Sy --noconfirm hyprland-git
-yay -Sy --noconfirm waybar-git
+sudo pacman -Sy --noconfirm hyprland
+yay -Sy --noconfirm waybar-cava
 yay -Sy --noconfirm hypridle-git
 yay -Sy --noconfirm swaylock-effects
 sudo pacman -Sy --noconfirm rofi
@@ -34,7 +34,7 @@ cp hypr/hypridle-3.conf ~/.config/hypr/hypridle-3.conf
 cp hypr/hypridle-4.conf ~/.config/hypr/hypridle-4.conf
 cp hypr/hypridle-5.conf ~/.config/hypr/hypridle-5.conf
 cp hypr/last_config ~/.config/hypr/last_config
-cp waybar/config ~/.config/waybar/config
+cp waybar/config.jsonc ~/.config/waybar/config.jsonc
 cp waybar/style.css ~/.config/waybar/style.css
 cp rofi/config.rasi ~/.config/rofi/config.rasi
 cp rofi/catppuccin.rasi ~/.config/rofi/catppuccin.rasi
@@ -42,6 +42,7 @@ cp swaylock/config ~/.config/swaylock/config
 cp swww/swww-random.sh ~/.config/swww/swww-random.sh
 cp Thunar/uca.xml ~/.config/Thunar/uca.xml
 cp alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
+cp -r cava ~/.config/
 
 chmod +x ~/.config/swww/swww-random.sh
 sudo chmod 777 ~/.config/wallpapers
