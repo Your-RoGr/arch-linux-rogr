@@ -80,6 +80,14 @@ chmod +x gui-apps-installer.sh
 chmod +x python-installer.sh
 chmod +x games-installer.sh
 
+# Install hyprpm
+sudo pacman -Sy --noconfirm meson cpio
+hyprpm update
+hyprpm add https://github.com/hyprwm/hyprland-plugins
+hyprpm list
+hyprpm enable hyprbars
+hyprpm enable hyprexpo
+
 # Clean cache
 sudo pacman -Scc --noconfirm
 yay -Scc --noconfirm
