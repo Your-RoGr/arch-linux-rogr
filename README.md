@@ -1,4 +1,5 @@
-![Version](https://img.shields.io/badge/Version-1.1.0-blue)
+![Version](https://img.shields.io/badge/Version-1.2.0-blue)
+
 # Arch linux
 
 [English](README.en.md) | [Русский](README.md)
