@@ -154,8 +154,8 @@
 
   "network": {
     "format-wifi": "🛜{signalStrength}%",
-    "format-ethernet": "🌐{ipaddr}/{cidr}",
-    "tooltip-format": "{ifname} via {gwaddr}",
+    "format-ethernet": "🌐↑{bandwidthUpBytes}↓{bandwidthDownBytes}",
+    "tooltip-format": "{ipaddr}/{cidr}",
     "format-linked": "🌐{ifname} (No IP)",
     "format-disconnected": "Disconnected ⚠",
     "on-click-middle": "iwgtk"
@@ -383,8 +383,8 @@
 
    "network": {
      "format-wifi": "🛜{signalStrength}%",
-     "format-ethernet": "🌐{ipaddr}/{cidr}",
-     "tooltip-format": "{ifname} via {gwaddr}",
+     "format-ethernet": "🌐↑{bandwidthUpBytes}↓{bandwidthDownBytes}",
+     "tooltip-format": "{ipaddr}/{cidr}",
      "format-linked": "🌐{ifname} (No IP)",
      "format-disconnected": "Disconnected ⚠",
      "on-click-middle": "iwgtk"
