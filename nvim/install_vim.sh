@@ -30,6 +30,7 @@ go install github.com/koron/iferr@latest
 go install golang.org/x/tools/cmd/callgraph@latest
 go install github.com/davidrjenni/reftools/cmd/fillswitch@latest
 
+mkdir -p ~/.config/nvim/
 cp ./init.vim ~/.config/nvim/
 cp -r ./lua ~/.config/nvim/
 

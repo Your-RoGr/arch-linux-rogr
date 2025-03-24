@@ -15,7 +15,7 @@ sudo cp -r wallpapers ~/.config
 chmod -R +x ~/.config/waybar/scripts/
 
 sudo pacman -Sy --noconfirm kde-cli-tools
-yay -Sy --noconfirm hyprland
+yay -Sy --noconfirm hyprland-git
 yay -Sy --noconfirm waybar-git
 yay -Sy --noconfirm hypridle-git
 yay -Sy --noconfirm swaylock-effects
@@ -87,9 +87,11 @@ hyprpm add https://github.com/hyprwm/hyprland-plugins
 hyprpm list
 hyprpm enable hyprbars
 hyprpm enable hyprexpo
+hyprpm update
 
 # Clean cache
 sudo pacman -Scc --noconfirm
 yay -Scc --noconfirm
 
+./nvim/install_vim.sh 
 ./gui-apps-installer.sh

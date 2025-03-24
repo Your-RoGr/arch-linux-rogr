@@ -2,7 +2,7 @@
 
 sudo rm -rf /local
 
-sudo cp pacman/pacman.conf /etc/pacman.conf
+# sudo cp pacman/pacman.conf /etc/pacman.conf
 
 sudo pacman -Syyu --noconfirm
 sudo pacman -Sy --noconfirm intel-media-driver

@@ -5,13 +5,13 @@
 ###########
 
 # Import additional configuration files
-import = []
+general.import = []
 
 #########
 # SHELL #
 #########
 
-[shell]
+[terminal.shell]
 program = "/bin/fish"
 
 #######
