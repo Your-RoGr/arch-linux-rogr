@@ -13,12 +13,12 @@
       "group/c-w",
       "hyprland/workspaces",
       "custom/rofi",
-      "wlr/taskbar",
-      "cava"
+      "wlr/taskbar"
+      // "group/center"
     ],
-    "modules-center": [
-      "group/center"
-    ],
+    // "modules-center": [
+    //   "cava"
+    // ],
     "modules-right": [
       "tray",
       "group/n",
@@ -66,6 +66,19 @@
     "hyprland/workspaces": {
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "format": "{icon}",
+      "format-icons": {
+        "1": "一",
+        "2": "二",
+        "3": "三",
+        "4": "四",
+        "5": "五",
+        "6": "六",
+        "7": "七",
+        "8": "八",
+        "9": "九",
+        "10": "十"
+      },
       "persistent-workspaces": {
         "*": 1
       }
@@ -86,38 +99,38 @@
         "Alacritty"
       ]
     },
-    "cava": {
-        "cava_config": "$HOME/.config/cava/config",
-        "framerate": 30,
-        "autosens": 1,
-        "sensitivity": 1,
-        "bars": 50,
-        "lower_cutoff_freq": 50,
-        "higher_cutoff_freq": 10000,
-        "method": "pulse",
-        "source": "auto",
-        "stereo": true,
-        "reverse": false,
-        "bar_delimiter": 0,
-        "monstercat": false,
-        "waves": true,
-        "noise_reduction": 0.77,
-        "input_delay": 1,
-        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-        "actions": {
-          "on-click-right": "mode"
-        }
-    },
-    "group/center": {
-      "orientation": "inherit",
-      "modules": [
-        "temperature",
-        "cpu",
-        "custom/memory",
-        "memory",
-        "battery"
-      ]
-    },
+    // "cava": {
+    //     "cava_config": "$HOME/.config/cava/config",
+    //     "framerate": 30,
+    //     "autosens": 1,
+    //     "sensitivity": 1,
+    //     "bars": 32,
+    //     "lower_cutoff_freq": 50,
+    //     "higher_cutoff_freq": 10000,
+    //     "method": "pulse",
+    //     "source": "auto",
+    //     "stereo": true,
+    //     "reverse": false,
+    //     "bar_delimiter": 0,
+    //     "monstercat": false,
+    //     "waves": true,
+    //     "noise_reduction": 0.77,
+    //     "input_delay": 1,
+    //     "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+    //     "actions": {
+    //       "on-click-right": "mode"
+    //     }
+    // },
+    // "group/center": {
+    //   "orientation": "inherit",
+    //   "modules": [
+    //     "temperature",
+    //     "cpu",
+    //     "custom/memory",
+    //     "memory",
+    //     "battery"
+    //   ]
+    // },
     "temperature": {
       "tooltip": false,
       "format": "🌡️{temperatureC}°C",
@@ -125,20 +138,8 @@
       "on-click-middle": "cpupower-gui"
     },
     "cpu": {
-      "interval": 1,
-      "format": "CPU {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}",
-      "format-icons": [
-         "<span color='#69ff94'>▁</span>",
-         "<span color='#2aa9ff'>▂</span>",
-         "<span color='#f8f8f2'>▃</span>",
-         "<span color='#f8f8f2'>▄</span>",
-         "<span color='#ffffa5'>▅</span>",
-         "<span color='#ffffa5'>▆</span>",
-         "<span color='#ff9977'>▇</span>",
-         "<span color='#dd532e'>█</span>"  
-      ],
-      // "interval": 10,
-      // "format": "🔲{usage}%",
+      "interval": 10,
+      "format": "🔲{usage}%",
       "on-click-middle": "cpupower-gui"
     },
     "memory": {
@@ -173,7 +174,7 @@
     },
     "network": {
       "format-wifi": "🛜{signalStrength}%",
-      "format-ethernet": "🌐↑{bandwidthUpBytes}↓{bandwidthDownBytes}",
+      "format-ethernet": "🌐⬆{bandwidthUpBytes}⬇{bandwidthDownBytes}",
       "tooltip-format": "{ipaddr}/{cidr}",
       "format-linked": "🌐{ifname} (No IP)",
       "format-disconnected": "Disconnected ⚠",
@@ -254,9 +255,10 @@
       "hyprland/workspaces",
       "custom/rofi",
       "wlr/taskbar"
+      // "group/center"
     ],
     "modules-center": [
-      "group/center"
+      "cava"
     ],
     "modules-right": [
       "tray",
@@ -305,6 +307,19 @@
     "hyprland/workspaces": {
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "format": "{icon}",
+      "format-icons": {
+        "1": "一",
+        "2": "二",
+        "3": "三",
+        "4": "四",
+        "5": "五",
+        "6": "六",
+        "7": "七",
+        "8": "八",
+        "9": "九",
+        "10": "十"
+      },
       "persistent-workspaces": {
         "*": 1
       }
@@ -325,16 +340,38 @@
         "Alacritty"
       ]
     },
-    "group/center": {
-      "orientation": "inherit",
-      "modules": [
-        "temperature",
-        "cpu",
-        "custom/memory",
-        "memory",
-        "battery"
-      ]
+    "cava": {
+        "cava_config": "$HOME/.config/cava/config",
+        "framerate": 30,
+        "autosens": 1,
+        "sensitivity": 1,
+        "bars": 32,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": true,
+        "noise_reduction": 0.77,
+        "input_delay": 1,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+          "on-click-right": "mode"
+        }
     },
+    // "group/center": {
+    //   "orientation": "inherit",
+    //   "modules": [
+    //     "temperature",
+    //     "cpu",
+    //     "custom/memory",
+    //     "memory",
+    //     "battery"
+    //   ]
+    // },
     "temperature": {
       "tooltip": false,
       "format": "🌡️{temperatureC}°C",
@@ -378,7 +415,7 @@
     },
     "network": {
       "format-wifi": "🛜{signalStrength}%",
-      "format-ethernet": "🌐↑{bandwidthUpBytes}↓{bandwidthDownBytes}",
+      "format-ethernet": "🌐⬆{bandwidthUpBytes}⬇{bandwidthDownBytes}",
       "tooltip-format": "{ipaddr}/{cidr}",
       "format-linked": "🌐{ifname} (No IP)",
       "format-disconnected": "Disconnected ⚠",

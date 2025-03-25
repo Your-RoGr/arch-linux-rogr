@@ -1,10 +1,10 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrains Mono", serif;
     font-weight: bold;
     font-size: 16px;
     min-height: 0;
+    font-family: "Noto Sans Mono", sans;
 }
 
 .emoji {
@@ -128,8 +128,12 @@ window#waybar {
     margin-right: 10px;
 }
 
+#cava {
+    padding-top: 10px;
+}
+
 #custom-rofi {
-    font-size: 20px;
+    font-size: 18px;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -140,7 +144,7 @@ window#waybar {
 }
 
 #custom-power-menu {
-    font-size: 24px;
+    font-size: 22px;
     padding-left: 5px;
     padding-right: 5px;
     color: rgba(245, 84, 103, 0.90);
