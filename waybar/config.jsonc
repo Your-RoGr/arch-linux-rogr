@@ -201,6 +201,7 @@
     "group/v": {
       "orientation": "inherit",
       "modules": [
+        "battery",
         "custom/change-idle",
         "backlight",
         "wireplumber",
@@ -442,6 +443,7 @@
     "group/v": {
       "orientation": "inherit",
       "modules": [
+        "battery",
         "backlight",
         "wireplumber",
         "custom/power-menu"
